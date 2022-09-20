@@ -4,7 +4,6 @@ import {
     Routes,
     Route,
     Link,
-    useNavigate
 } from 'react-router-dom'
 import Home from '../routes/Home';
 import Pokemons from '../routes/Pokemons';
