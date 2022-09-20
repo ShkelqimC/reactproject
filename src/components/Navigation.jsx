@@ -8,6 +8,7 @@ import {
 } from 'react-router-dom'
 import Home from '../routes/Home';
 import Pokemons from '../routes/Pokemons';
+import Search from '../routes/Search';
 
 
 const Navigation = () => {
@@ -24,12 +25,16 @@ const Navigation = () => {
                     <li>
                         <Link className='navLink' to="/Pokemons">Pokemons</Link>
                     </li>
+                    <li>
+                        <Link className='navLink' to="/Search">Search</Link>
+                    </li>
                 </ul>
 
             </div>
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/Pokemons" element={<Pokemons />} />
+                <Route path="/Search" element={<Search />} />
             </Routes>
         </Router>
 

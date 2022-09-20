@@ -5,9 +5,10 @@ const Home = () => {
     let navigate = useNavigate();
     return (
         <div className='hero'>
-            <div>
+            <div >
 
-                <h1>
+
+                <h1 onClick={() => navigate("/Home")}>
                     Welcome!
                 </h1>
 
