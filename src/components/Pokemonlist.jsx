@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios'
 import Pokecard from './Pokecard';
+import Pagination from './Pagination';
 
 
 const Pokemonlist = () => {
@@ -21,7 +22,6 @@ const Pokemonlist = () => {
             setPokemon(res.data.results.map(p => {
                 axios.get(p.url)
                     .then(resp => {
-                        console.log(resp.data, "resp.data")
                     })
                 return {
                     name: p.name,
@@ -36,11 +36,24 @@ const Pokemonlist = () => {
 
     }, [page])
 
+    function gotoNextPage() {
+        setPage(nextPage)
+    }
+    function gotoPrevPage() {
+        setPage(prevPage)
+    }
+
+    if (loading) return "Loading..."
+
 
 
     return (
         <div className='pokeList'>
             {pokemon.map(p => (<Pokecard key={p.name} data={p} />))}
+            <div className='pagination'><Pagination
+                gotoNextPage={nextPage ? gotoNextPage : null}
+                gotoPrevPage={prevPage ? gotoPrevPage : null}
+            /></div>
         </div>
     );
 }
