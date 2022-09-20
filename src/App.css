@@ -1,6 +1,12 @@
 *{
   margin: 0;
   padding: 0;
+  font-family: 'Inter', sans-serif;
+font-family: 'Montserrat', sans-serif;
+font-size: 0.9rem;
+}
+body{
+  background-color: rgb(47, 40, 40);
 }
 .pokeCard{
   display: flex;
@@ -8,10 +14,16 @@
   justify-content: space-around;
   margin: 5px 7px;
   border-radius: 7px;
+  background-color: rgb(140, 140, 140);
+  align-items: center;
+  
 }
 .battleStat{
  display: flex;
  justify-content: space-between;
+}
+.pagination{
+  margin:10px 0
 }
 .statContainer{
   width: 150px;
@@ -50,7 +62,13 @@
 }
 .abilities{
   text-align: center;
+  margin-left: 16px;
+  margin-right: 9px;
 }
 .ab_title{
   font-weight: bold;
+}
+
+li:nth-child(odd){
+  color:rgb(55, 45, 45);
 }
