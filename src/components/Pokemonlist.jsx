@@ -40,7 +40,7 @@ const Pokemonlist = () => {
         setPage(prevPage)
     }
 
-    if (loading) return "Loading..."
+    if (loading) return <div className='loading'>Loading poke data...</div>
 
 
 

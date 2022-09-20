@@ -5,6 +5,9 @@
 .pokeCard{
   display: flex;
   border: 1px solid black;
+  justify-content: space-around;
+  margin: 5px 7px;
+  border-radius: 7px;
 }
 .battleStat{
  display: flex;
@@ -12,6 +15,10 @@
 }
 .statContainer{
   width: 150px;
+}
+.loading{
+  text-align: center;
+  font-size: 1.3rem;
 }
 
 .cardHolder{
@@ -24,7 +31,7 @@
 .cardTitle{
   display: flex;
   flex-direction: column;
-  border: 1px solid red;
+  text-align: center;
 }
 .poke-thumbnail{
   height: auto;
@@ -32,7 +39,7 @@
 }
 .stats{
   text-align: center;
-  width: 200px;
+
   display: flex;
 }
 .pokeList{
@@ -40,4 +47,10 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+}
+.abilities{
+  text-align: center;
+}
+.ab_title{
+  font-weight: bold;
 }

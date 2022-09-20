@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios
     from 'axios';
 import Stats from './Stats';
-
+import Abilities from './Abilities';
 
 const Pokecard = ({ data }) => {
     const [picLoading, setPicLoading] = useState(false)
@@ -24,11 +24,6 @@ const Pokecard = ({ data }) => {
 
 
 
-    if (data.stats) {
-
-        console.log(data.stats.abilities, "data")
-    }
-
     return (
         <div className='pokeCard'>
             <div className='cardTitle'>
@@ -39,7 +34,7 @@ const Pokecard = ({ data }) => {
                 {data.stats && <Stats stats={data.stats} />}
             </div>
             <div className='abilities'>
-
+                {data.stats && <Abilities abilities={data.stats.abilities} />}
             </div>
         </div>
     );
