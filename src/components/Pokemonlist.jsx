@@ -20,9 +20,6 @@ const Pokemonlist = () => {
             setNextpage(res.data.next)
             setPrevpage(res.data.previous)
             setPokemon(res.data.results.map(p => {
-                axios.get(p.url)
-                    .then(resp => {
-                    })
                 return {
                     name: p.name,
                     url: p.url,
@@ -49,7 +46,13 @@ const Pokemonlist = () => {
 
     return (
         <div className='pokeList'>
-            {pokemon.map(p => (<Pokecard key={p.name} data={p} />))}
+            <div className='pagination'><Pagination
+                gotoNextPage={nextPage ? gotoNextPage : null}
+                gotoPrevPage={prevPage ? gotoPrevPage : null}
+            /></div>
+            <div className='cardHolder'>
+                {pokemon.map(p => (<Pokecard key={p.name} data={p} />))}
+            </div>
             <div className='pagination'><Pagination
                 gotoNextPage={nextPage ? gotoNextPage : null}
                 gotoPrevPage={prevPage ? gotoPrevPage : null}
