@@ -1,4 +1,6 @@
 import React from 'react';
+import { v4 as uuidv4 } from 'uuid';
+
 
 const Abilities = ({ abilities }) => {
 
@@ -10,8 +12,7 @@ const Abilities = ({ abilities }) => {
 
             <ul>
                 {abilities.map(a => {
-                    { console.log(a.ability.name, "a") }
-                    return <li>{a.ability.name}</li>
+                    return <li key={uuidv4()}>{a.ability.name}</li>
                 })}
             </ul>
         </div>

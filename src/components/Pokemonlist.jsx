@@ -17,6 +17,7 @@ const Pokemonlist = () => {
         axios.get(page, {
             cancelToken: new axios.CancelToken(c => cancel = c)
         }).then(res => {
+            console.log(res, "res")
             setNextpage(res.data.next)
             setPrevpage(res.data.previous)
             setPokemon(res.data.results.map(p => {

@@ -4,30 +4,25 @@ import axios
 import Stats from './Stats';
 import Abilities from './Abilities';
 
+
 const Pokecard = ({ data }) => {
     const [picLoading, setPicLoading] = useState(false)
 
 
     useEffect(() => {
-        setPicLoading(true)
-        const info = axios.get(data.url).then(res => {
+        axios.get(data.url).then(res => {
             setPicLoading(true)
             data.stats = res.data
             data.imgUrl = res.data.sprites.front_default
         })
-
-
-        setPicLoading(false)
-
-
-    }, [])
+    })
 
 
 
     return (
         <div className='pokeCard'>
             <div className='cardTitle'>
-                <img className='poke-thumbnail' src={data.imgUrl} />
+                {picLoading && <img className='poke-thumbnail' alt={`${data.name}`} src={data.imgUrl} />}
                 {data.name}
             </div>
             <div className='stats'>
